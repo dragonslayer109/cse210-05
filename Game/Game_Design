@@ -27,9 +27,48 @@ start game(): cast, script
 Execute actions(): group, cast, script
 ---
 
-Class: Actor ()
-Class: Cast ()
-Class: Score ()
+Class: Actor (Erin)
+# The visual representation of a moveable object.
+---
+_text = str
+_font_size = int
+_color = Color()
+_position = Point()
+_velocity = Point()
+---
+get_text(): None
+get_font_size(): None
+get_color(): None
+get_position(): None
+get_velocity(): None
+set_text(): text
+set_font_size(): font_size
+set_color(): color
+set_position(): position
+set_velocity(): velocity
+next_move(): None
+---
+
+Class: Cast (Erin)
+# Creates and manages a collection of Actors.
+---
+_actors = {}
+---
+get_collection(): None
+get_actors(): collection
+get_first_actor(): collection
+new_actor(): collection, actor
+delete_actor(): collection, actor
+---
+
+Class: Score (Erin)
+# Keeps track of and adds up the points that the user gains.
+---
+_score = int
+---
+add_points(): points
+---
+
 Class: Player ()
 Class: Player_1 ()
 Class: Player_2 ()
@@ -56,7 +95,15 @@ execute(): cast, script
 ---
 
 Class: HandleCollisionsAction ()
-Class: MoveActorsAction ()
+
+Class: MoveActorsAction (Erin)
+# Moves all the Actors according to their velocity.
+---
+Attr: None
+---
+execute(): cast, script
+---
+
 Class: keyboard_service ()
 Class: video_service ()
 Class: color ()
