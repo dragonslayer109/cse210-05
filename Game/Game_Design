@@ -128,7 +128,17 @@ draw_grid(): None
 close_window(): None
 ---
 
-Class: color ()
+Class: color (Erin)
+# Chooses the colors to be displayed on the screen for the chosen objects
+---
+_red = int
+_blue = int
+_green = int
+_opacity = int
+---
+rgb_value(): None
+---
+
 Class: Point ()
 Main ()
 # run game
