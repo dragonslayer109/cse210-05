@@ -104,8 +104,30 @@ Attr: None
 execute(): cast, script
 ---
 
-Class: keyboard_service ()
-Class: video_service ()
+Class: keyboard_service (Erin)
+# Detects the user's input from the keyboard
+---
+_keys = pyray
+---
+key_up(): key
+key_down(): key
+---
+
+Class: video_service (Erin)
+# Displays the game on the screen
+---
+_debug = boolean
+---
+is_window_open(): None
+open_window(): None
+first_buffer(): None
+second_buffer(): None
+display_actor(): actor
+display_actors(): actors
+draw_grid(): None
+close_window(): None
+---
+
 Class: color ()
 Class: Point ()
 Main ()
