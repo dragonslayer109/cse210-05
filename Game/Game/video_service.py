@@ -59,7 +59,7 @@ class VideoService:
 
         text = actor.get_text()
         font_size = actor.get_font_size()
-        color = actor.get_color()
+        color = actor.get_color().rgb_value()
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()
             
