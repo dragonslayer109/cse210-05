@@ -69,9 +69,10 @@ _score = int
 add_points(): points
 ---
 
-Class: Player ()
 Class: Player_1 ()
+
 Class: Player_2 ()
+
 Class: Action (Raydon)
 # Creates somthing to be done
 ---
@@ -142,3 +143,11 @@ rgb_value(): None
 Class: Point ()
 Main ()
 # run game
+
+class: Script (Raydon)
+#controls actions
+_actions = {}
+---
+add_action()
+get_actions()
+remove_actions
