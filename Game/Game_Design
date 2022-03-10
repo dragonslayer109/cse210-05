@@ -1,0 +1,144 @@
+# cse210-05
+ Team Work
+# Cycle
+Cycle is a game where the players try to cut each other off using cycles that leave a trail behind them.
+
+# Rules
+Cycle is played according to the following rules.
+
+Players can move up, down, left and right...
+Player one moves using the W, S, A and D keys.
+Player two moves using the I, K, J and L keys.
+Each player's trail grows as they move.
+Players try to maneuver so the opponent collides with their trail.
+If a player collides with their opponent's trail...
+A "game over" message is displayed in the middle of the screen.
+The cycles turn white.
+Players keep moving and turning but don't run into each other.
+
+## Game Design
+
+Class: Director (Raydon)
+# Directs game
+---
+_video_service = service
+---
+start game(): cast, script
+Execute actions(): group, cast, script
+---
+
+Class: Actor (Erin)
+# The visual representation of a moveable object.
+---
+_text = str
+_font_size = int
+_color = Color()
+_position = Point()
+_velocity = Point()
+---
+get_text(): None
+get_font_size(): None
+get_color(): None
+get_position(): None
+get_velocity(): None
+set_text(): text
+set_font_size(): font_size
+set_color(): color
+set_position(): position
+set_velocity(): velocity
+next_move(): None
+---
+
+Class: Cast (Erin)
+# Creates and manages a collection of Actors.
+---
+_actors = {}
+---
+get_collection(): None
+get_actors(): collection
+get_first_actor(): collection
+new_actor(): collection, actor
+delete_actor(): collection, actor
+---
+
+Class: Score (Erin)
+# Keeps track of and adds up the points that the user gains.
+---
+_score = int
+---
+add_points(): points
+---
+
+Class: Player ()
+Class: Player_1 ()
+Class: Player_2 ()
+Class: Action (Raydon)
+# Creates somthing to be done
+---
+execute(): cast, script
+---
+
+Class: ControlActorsAction (Raydon)
+# Controls the player based on the input
+---
+_keyboard_service = service
+_direction = Point()
+---
+execute(): cast, script
+---
+Class: DrawActorsAction (Raydon)
+# draws all actors
+---
+_video_service = service
+---
+execute(): cast, script
+---
+
+Class: HandleCollisionsAction ()
+
+Class: MoveActorsAction (Erin)
+# Moves all the Actors according to their velocity.
+---
+Attr: None
+---
+execute(): cast, script
+---
+
+Class: keyboard_service (Erin)
+# Detects the user's input from the keyboard
+---
+_keys = pyray
+---
+key_up(): key
+key_down(): key
+---
+
+Class: video_service (Erin)
+# Displays the game on the screen
+---
+_debug = boolean
+---
+is_window_open(): None
+open_window(): None
+first_buffer(): None
+second_buffer(): None
+display_actor(): actor
+display_actors(): actors
+draw_grid(): None
+close_window(): None
+---
+
+Class: color (Erin)
+# Chooses the colors to be displayed on the screen for the chosen objects
+---
+_red = int
+_blue = int
+_green = int
+_opacity = int
+---
+rgb_value(): None
+---
+
+Class: Point ()
+Main ()
+# run game
