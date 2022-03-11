@@ -13,9 +13,8 @@ class Score(Actor):
         super().__init__()
 
         self._score = 0
-        self.add_score(0)
 
-    def add_points(self, points):
+    def is_winner(self, points):
         """The sum of the player's points gained.
         
         Args:
@@ -23,4 +22,8 @@ class Score(Actor):
         """
 
         self._score += points
-        self.set_text(f"Score: {self._score}")
+
+        if self._score == 0:
+            self.set_text("You lose! Try again next time.")
+        elif self._score != 0:
+            self.set_text("Congratulations! You win!")
